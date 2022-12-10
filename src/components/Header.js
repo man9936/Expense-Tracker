@@ -3,9 +3,8 @@ import React from "react";
 const Header = () => {
   return (
     <div>
-      <span>Home</span>
-      <span>Product</span>
-      <span>About Us</span>
+      <Link to="/home">Home</Link>
+      <Link to="expense">ExpenseTracker</Link>
     </div>
   );
 };
