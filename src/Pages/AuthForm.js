@@ -57,6 +57,8 @@ const AuthForm = () => {
         .then((data) => {
           console.log(data);
           authCntxt.login(data.idToken);
+          localStorage.setItem("token", data.idToken);
+          history.replace("/expense");
         })
         .catch((err) => {
           console.log(err);
