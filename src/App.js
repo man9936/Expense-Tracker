@@ -1,10 +1,11 @@
 import "./styles.css";
-import Login from "./pages/Login";
+import Login from "./Pages/Login";
+import AuthForm from "./Pages/AuthForm";
 
 export default function App() {
   return (
     <div>
-      <Login />
+      <AuthForm />
     </div>
   );
 }
