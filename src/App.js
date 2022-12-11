@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import ForgetPassword from "./Pages/ForgetPassword";
 
 import AuthForm from "./Pages/AuthForm";
 import CompleteProfile from "./Pages/CompleteProfile";
@@ -19,6 +20,9 @@ export default function App() {
         </Route>
         <Route path="/home">
           <Headers />
+        </Route>
+        <Route path="/forgetpassword" exact>
+          <ForgetPassword />
         </Route>
 
         {isLoggedIn && (

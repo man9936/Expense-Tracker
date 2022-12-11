@@ -20,6 +20,10 @@ const AuthForm = () => {
     setIsLogin((prevState) => !prevState);
   };
 
+  const forgetPasswordHandler = () => {
+    history.replace("/forgetpassword");
+  };
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -146,6 +150,7 @@ const AuthForm = () => {
             {!isLoading && !isLogin && <button> Create Account</button>}
 
             {isLoading && !isLogin && <p>Sending request....</p>}
+
             <button
               type="button"
               className="toggle"
@@ -155,6 +160,21 @@ const AuthForm = () => {
             </button>
           </div>
         </form>
+        {isLogin && (
+          <button
+            style={{
+              backgroundColor: "transparent",
+              color: "purple",
+              margin: "0% 25%",
+              border: "none",
+              cursor: "pointer",
+            }}
+            className="btn"
+            onClick={forgetPasswordHandler}
+          >
+            <small> Forget Password?Click Here.</small>
+          </button>
+        )}
       </div>
     </section>
   );
