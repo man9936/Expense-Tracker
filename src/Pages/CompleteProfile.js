@@ -40,6 +40,25 @@ const CompleteProfile = () => {
       .catch((err) => {
         console.log(err);
       });
+
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyC6fDnhYOxjGbDuLGTyrDReR3nx4F7TUD0",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          idToken: id,
+        }),
+        headers: {
+          "Content-Type": "application-json",
+        },
+      }
+    )
+      .then((resp) => {
+        console.log(resp);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div>
