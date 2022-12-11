@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import AuthContext from "../Store/Auth-Context";
 // import Login from "./Login";
 import "./AuthForm.css";
@@ -8,7 +8,7 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  //   const history = useHistory();
+  const history = useHistory();
 
   const authCntxt = useContext(AuthContext);
 
@@ -84,13 +84,14 @@ const AuthForm = () => {
           } else {
             resp.json().then((data) => {
               console.log(data);
-              //   history.replace("/ExpenseTracker");
             });
           }
         })
         .then((data) => {
           console.log(data);
           authCntxt.login(data.idToken);
+          localStorage.setItem("token", data.idToken);
+          history.replace("/expense");
         })
         .catch((err) => {
           alert(err);
