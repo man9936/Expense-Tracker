@@ -6,6 +6,8 @@ import CompleteProfile from "./Pages/CompleteProfile";
 import ExpenseTracker from "./Pages/ExpenseTracker";
 import AuthContext from "./Store/Auth-Context";
 
+import Header from "./Components/Header";
+
 export default function App() {
   const authCntxt = useContext(AuthContext);
   const isLoggedIn = authCntxt.isLoggedIn;
@@ -15,9 +17,13 @@ export default function App() {
         <Route path="/authform">
           <AuthForm />
         </Route>
+        <Route path="/home">
+          <Headers />
+        </Route>
 
         {isLoggedIn && (
           <Route path="/expense" exact>
+            <Header />
             <ExpenseTracker />
           </Route>
         )}

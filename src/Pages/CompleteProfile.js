@@ -2,20 +2,21 @@ import React, { useRef } from "react";
 
 const CompleteProfile = () => {
   const nameInputRef = useRef();
-  const numberInputRef = useRef();
+  const photoInputRef = useRef();
 
   const updateHandler = (e) => {
     e.preventDefault();
     const updatedName = nameInputRef.current.value;
-    const updatedNumber = numberInputRef.current.value;
+    const updatedPhoto = photoInputRef.current.value;
 
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyC6fDnhYOxjGbDuLGTyrDReR3nx4F7TUD0",
       {
         method: "POST",
         body: JSON.stringify({
-          name: updatedName,
-          number: updatedNumber,
+          idToken: localStorage.getItem("token"),
+          displayName: updatedName,
+          photoUrl: updatedPhoto,
           returnSecureToken: false,
         }),
         headers: {
@@ -48,8 +49,8 @@ const CompleteProfile = () => {
           <input type="text" ref={nameInputRef} />
         </div>
         <div>
-          <label>Contact No.</label>
-          <input type="number" ref={numberInputRef} />
+          <label>photo-Url</label>
+          <input type="text" ref={photoInputRef} />
         </div>
         <button onClick={updateHandler}>Update</button>
       </form>
