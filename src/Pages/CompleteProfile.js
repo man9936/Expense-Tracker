@@ -17,7 +17,7 @@ const CompleteProfile = () => {
           idToken: localStorage.getItem("token"),
           displayName: updatedName,
           photoUrl: updatedPhoto,
-          returnSecureToken: false,
+          returnSecureToken: true,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const CompleteProfile = () => {
         }
       })
       .then((data) => {
-        console.log("endThen", data);
+        console.log("Last Then", data);
       })
       .catch((err) => {
         console.log(err);
@@ -49,8 +49,8 @@ const CompleteProfile = () => {
           <input type="text" ref={nameInputRef} />
         </div>
         <div>
-          <label>photo-Url</label>
-          <input type="text" ref={photoInputRef} />
+          <label>Upload Your image</label>
+          <input type="file" accept="/image/*" ref={photoInputRef} />
         </div>
         <button onClick={updateHandler}>Update</button>
       </form>
