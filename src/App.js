@@ -8,6 +8,7 @@ import ExpenseTracker from "./Pages/ExpenseTracker";
 import AuthContext from "./Store/Auth-Context";
 
 import Header from "./Components/Header";
+import ExpenseShow from "./Components/Expenses/ExpenseShow";
 
 export default function App() {
   const authCntxt = useContext(AuthContext);
@@ -17,6 +18,9 @@ export default function App() {
       <Switch>
         <Route path="/authform">
           <AuthForm />
+        </Route>
+        <Route path="/dailyexpense" exact>
+          {isLoggedIn ? <ExpenseShow /> : <Redirect to="/authform" />}
         </Route>
         <Route path="/home">
           <Headers />

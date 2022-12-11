@@ -9,6 +9,7 @@ const Header = () => {
         <Link to="expense">ExpenseTracker</Link>
 
         <Link to="/completeProfile">Complete Profile</Link>
+        <Link to="/dailyexpense">Daily Expense</Link>
       </div>
     </nav>
   );

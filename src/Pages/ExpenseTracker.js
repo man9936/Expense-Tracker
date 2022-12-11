@@ -29,6 +29,10 @@ const ExpenseTracker = () => {
         console.log(err);
       });
   };
+
+  const dailyExpenseHandler = () => {
+    history.replace("/dailyexpense");
+  };
   return (
     <div>
       <div>
@@ -39,6 +43,7 @@ const ExpenseTracker = () => {
       <p>Your Profile is incomplete</p>
       <button onClick={profileCompleteHandler}>complete now</button>
       <button onClick={verifyIdHandler}>Verify Your Email-Id</button>
+      <button onClick={dailyExpenseHandler}> Add Daily Expenses</button>
     </div>
   );
 };
