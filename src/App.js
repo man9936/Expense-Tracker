@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./App.css";
 
+import ExpenseShow from "./Components/Expenses/ExpenseShow";
 import AuthForm from "./Pages/AuthForm";
 import CompleteProfile from "./Pages/CompleteProfile";
 import ExpenseTracker from "./Pages/ExpenseTracker";
+import ForgetPassword from "./Pages/ForgetPassword";
+import VerifyEmail from "./Pages/VerifyEmail";
 import AuthContext from "./Store/Auth-Context";
 
-export default function App() {
+function App() {
   const authCntxt = useContext(AuthContext);
-  const isLoggedIn = authCntxt.isLoggedIn;
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return (
-    <React.Fragment>
+    <>
       <Switch>
         <Route path="/authform">
           <AuthForm />
@@ -24,11 +29,25 @@ export default function App() {
         <Route path="/completeProfile" exact>
           <CompleteProfile />
         </Route>
+        <Route path="/forgetpassword" exact>
+          <ForgetPassword />
+        </Route>
+        {isLoggedIn && (
+          <Route path="/dailyexpense" exact>
+            <ExpenseShow />
+          </Route>
+        )}
+        <Route path="/verifyemail" exact>
+          <VerifyEmail />
+        </Route>
         <Route path="*">
-          <Redirect to="/authform" />
-          <AuthForm />
+          <Redirect to="/authform">
+            <AuthForm />
+          </Redirect>
         </Route>
       </Switch>
-    </React.Fragment>
+    </>
   );
 }
+
+export default App;

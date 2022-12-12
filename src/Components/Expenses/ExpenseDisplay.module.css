@@ -1,0 +1,13 @@
+.arrange{
+color: black;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: large;
+text-align: justify;
+text-transform: uppercase;
+text-indent: 90px;
+line-height: 1.8;
+letter-spacing: 5px;
+}
+
+.btn{
+    width: 100px;}
