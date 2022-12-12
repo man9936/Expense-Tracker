@@ -1,0 +1,9 @@
+.div {
+  width: 890px;
+  border: 2px solid #282c34;
+  padding: 45px;
+  margin: 46px;
+  outline-style: double;
+  background-image: url("https://www.google.com/url?sa=i&url=http%3A%2F%2Fgpshortcuts.co.uk%2Fregister.php&psig=AOvVaw0eS9S3AeQXMeQgYxBRLxHv&ust=1664199658438000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCICh94CJsPoCFQAAAAAdAAAAABAJ");
+  /* background-color: yellowgreen; */
+}

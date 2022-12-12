@@ -1,0 +1,52 @@
+.navigation {
+    color: black;
+    
+  }
+  
+  img {
+    width: 30px;
+    border-radius: 50px;
+    float: left;
+    height: auto;
+  }
+  
+  .logout {
+    font-size: .8em;
+    font-family: 'Oswald', sans-serif;
+      position: relative;
+    right: -18px;
+    bottom: -4px;
+    overflow: hidden;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+    
+  }
+  
+  .button {
+      text-decoration: none;
+      float: left;
+    padding: 5px;
+    margin: 10px;
+    color: white;
+    width: 25px;
+    /* background-color: black; */
+    transition: width .40s;
+    -webkit-transition: width .35s;
+    overflow: hidden
+  }
+  
+  a:hover {
+    width: 100px;
+  }
+  
+  a:hover .logout{
+    opacity: .9;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
